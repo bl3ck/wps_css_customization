@@ -35,7 +35,7 @@ Notes:
 * [x] this is a complete item
 * [ ] this is an incomplete item
 
-1. [SECTION 1] Let's archieve the following design with CSS
+1. #### [SECTION 1] Let's archieve the following design with CSS
     _Preview of final result_
     ![Product Search - Filter Example 1](/p_s_f_input.png)
     *   **HTML Elements** of insterest:
@@ -79,26 +79,28 @@ Notes:
         color: teal
     }
     ```
-2.  [SECTION 1. 1] Change blinker for input field
-        changing the loading \image is as simple as changing the background \image of this \input field when it has the `.blinker` class
+
+2.  ##### [SECTION 1. 1] Change blinker for input field
+    Changing the loading image is as simple as changing the background image of this input field when it has the `.blinker` class
         
-        _Preview of \final result_
-        [Gif used](https://ya-webdesign.com/image/loading-gif-png/654656.html)
-        ![Product Search - Filter Example 1](/blinker_final.png)
+    _Preview of \final result_
+    [Gif used](https://ya-webdesign.com/image/loading-gif-png/654656.html)
+    ![Product Search - Filter Example 1](/blinker_final.png)
 
-        _Preview of \form before styling result_
-        ![Product Search - Filter Example 1](/blinker_before.png)
+    _Preview of \form before styling result_
+    ![Product Search - Filter Example 1](/blinker_before.png)
 
-        *   **HTML Elements** of insterest:
-            ``` html
-                <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field blinker" placeholder="..." autocomplete="off" value="">
-            ```
-        *   **ID(s) and class(es)** we are insterected in:
-            ```css
-                #product-filter-search-form-0 or .product-search-form
-                .blinker
-            ```
+    *   **HTML Elements** of insterest:
+        ``` html
+            <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field blinker" placeholder="..." autocomplete="off" value="">
+        ```
+    *   **ID(s) and class(es)** we are insterected in:
+        ```css
+            #product-filter-search-form-0 or .product-search-form
+            .blinker
+        ```
 
+        _Adding search ICON to the Product Search - Filter Widget_
         ``` css
         .product-search-form input.blinker {
             background-image: url('/wp-content/uploads/2020/07/loading-gif-png.gif');
@@ -107,5 +109,5 @@ Notes:
             background-size: 10%;
         }
         ```
-        _Adding search ICON to the Product Search - Filter Widget_        
+        
         
