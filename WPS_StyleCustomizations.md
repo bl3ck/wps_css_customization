@@ -23,7 +23,7 @@ Once the widget Product Filter - Search is place on a side bar, you would have t
 </div>
 ```
 Notes:
-    > the elements with ID's ( `product-filter-search-form-0` and `product-filter-search-0` ) are likely to be different on you setup. So please inspect the element using your browser inspector to identify the ID. Hence it is very likely for you to have these ID's `product-filter-search-form-1` and `product-filter-search-1` as well.
+> the elements with ID's ( `product-filter-search-form-0` and `product-filter-search-0` ) are likely to be different on you setup. So please inspect the element using your browser inspector to identify the ID. Hence it is very likely for you to have these ID's `product-filter-search-form-1` and `product-filter-search-1` as well.
 
 
 **Based on the HTML above let's customize the search filter**
@@ -38,12 +38,12 @@ Notes:
 1. [SECTION 1] Let's archieve the following design with CSS
     _Preview of final result_
     ![Product Search - Filter Example 1](/p_s_f_input.png)
-    * **HTML Elements** of insterest:
+    *   **HTML Elements** of insterest:
         ``` html
             <form id="product-filter-search-form-0" class="product-search-form " action="..." method="...">
             <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field" placeholder="..." autocomplete="off" value="">
         ```
-    * **ID's** we are insterected in:
+    *   **ID's** we are insterected in:
         ```css
             #product-filter-search-form-0
             #product-filter-field-0
@@ -80,28 +80,32 @@ Notes:
     }
     ```
     * [SECTION 1. 1] Change blinker for input field
-        _Preview of final result_
-        ![Product Search - Filter Example 1](/p_s_f_input.png)
-        * **HTML Elements** of insterest:
+        changing the loading \image is as simple as changing the background \image of this \input field when it has the `.blinker` class
+        
+        _Preview of \final result_
+        [Gif used](https://ya-webdesign.com/image/loading-gif-png/654656.html)
+        ![Product Search - Filter Example 1](/blinker_final.png)
+
+        _Preview of \form before styling result_
+        ![Product Search - Filter Example 1](/blinker_before.png)
+
+        *   **HTML Elements** of insterest:
             ``` html
-                <form id="product-filter-search-form-0" class="product-search-form " action="..." method="...">
-                <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field" placeholder="..." autocomplete="off" value="">
+                <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field blinker" placeholder="..." autocomplete="off" value="">
             ```
-        * **ID's** we are insterected in:
+        *   **ID(s) and class(es)** we are insterected in:
             ```css
-                #product-filter-search-form-0
-                #product-filter-field-0
+                #product-filter-search-form-0 or .product-search-form
+                .blinker
             ```
 
         ``` css
-        #product-filter-field-0 {
-            border: solid 2px teal;
-            background-color: #fff;
-            color: teal;
-            font-size: 16px;
-            padding: 10px 36px;
-            outline: none;
+        .product-search-form input.blinker {
+            background-image: url('/wp-content/uploads/2020/07/loading-gif-png.gif');
+            background-position: right 8px center;
+            background-repeat: no-repeat;
+            background-size: 10%;
         }
         ```
         _Adding search ICON to the Product Search - Filter Widget_        
-
+        
