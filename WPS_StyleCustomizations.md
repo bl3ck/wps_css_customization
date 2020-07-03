@@ -29,8 +29,8 @@ Notes:
 **Based on the HTML above let's customize the search filter**
 
 #### Mini design project to master customizing your WPS.
-* [x] Style the Product Filter - Search Widget _See section [1]_
-    1. Change blinker for input field _See section 1.1
+* [x] Style the Product Filter - Search Widget _See section 1_
+* [x] Change blinker for input field _See section 1.1
 * [x] list syntax required (any unordered or ordered list supported)
 * [x] this is a complete item
 * [ ] this is an incomplete item
@@ -79,7 +79,7 @@ Notes:
         color: teal
     }
     ```
-    * [SECTION 1. 1] Change blinker for input field
+2.  [SECTION 1. 1] Change blinker for input field
         changing the loading \image is as simple as changing the background \image of this \input field when it has the `.blinker` class
         
         _Preview of \final result_
