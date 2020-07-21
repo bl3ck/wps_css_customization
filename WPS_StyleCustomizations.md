@@ -1,113 +1,198 @@
-## WPS Style Customizations
+## WooCommerce Product Search Style Customizations
 
-### Product Filter - Search 
+### Introduction
 
-Once the widget Product Filter - Search is place on a side bar, you would have the following default html in place.
+This section of the documentation is aimed at helping you customize your WooCommerce Product Search by adding custom styles. It gives you an overview of how to modify the layout, colors, and so much more. 
+
+This tutorial is based of the [STORE FRONT WooCommerce theme](https://woocommerce.com/storefront/). 
+
+I would also be using Firefox as over the course of this tutorial. However, it is worth nothing that the instructions here would also apply on your stores with different themes and browsers. We would also be using the [Inline Styles CSS editor](https://docs.woocommerce.com/document/woocommerce-product-search/settings/css/) provided by WooCommerce Product Search inorder to apply our custom styles.
+
+
+#### How to inspect and locate ID's and Classes. 
+This is very important as most of the tutorial relies heavily on this. We would be using the **developer console** for this. 
+
+In order to access the developer console, 
+* **Right click** on the webpage and select **Inspect Element** OR press the ```Ctrl``` ```Shift``` ```K``` (```Command``` ```Option``` ```K``` on OS X) keyboard shortcut. [for Mozilla Firefox]
+* **Right click** on the webpage and select **Inspect** OR press the ```Ctrl``` ```Shift``` ```C``` (```Command``` ```Option``` ```C``` on OS X) keyboard shortcut. [for Google Chrome]
+
+Let's move on to identifying the ID and classes for WooCommerce Product Search field.
+**See Screenshots:**
+1. Before
+   ![How to Inspect a Product Search Field](/find_id.png)
+2. After Inspecting
+   ![How to Inspect a Product Search Field](/console.png)
+>   _
+> Though we assume you know your way around with CSS rules. Here's a good resource to help refresh your mind on CSS rules and how to target HTML elements with CSS.
+> * [CSS rules reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+> * [How to target HTML with CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+>   _
+
+
+### How to modify some properties of WooCommerce Product Search Field.
+After inpecting the WooCommerce Product Search Field, you should be able to see the following HTML in your console.
 
 ``` html
-<div id="product-filter-search-0" class="product-search product-filter product-search-filter-search" style="">
-    <div class="product-search-form">
-        <form id="product-filter-search-form-0" class="product-search-form " action="..." method="...">
-            <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field" placeholder="..." autocomplete="off" value="">
-            <input type="hidden" name="title" value="1">
-            <input type="hidden" name="excerpt" value="1">
-            <input type="hidden" name="content" value="1">
-            <input type="hidden" name="categories" value="1">
-            <input type="hidden" name="attributes" value="1">
-            <input type="hidden" name="tags" value="1">
-            <input type="hidden" name="sku" value="1">
-            <button type="submit">Search</button>
-        </form>
+<div class="widget woocommerce widget_product_search">
+    <div id="product-search-0" class="product-search floating">
+        <div class="product-search-form">
+            <form id="product-search-form-0" class="product-search-form show-submit-button" action="http://wpdev-com.stackstaging.com/" method="get">
+                ::before
+                <input id="product-search-field-0" name="s" type="text" class="product-search-field" placeholder="Search products …" autocomplete="off">
+                <input type="hidden" name="post_type" value="product">
+                <input type="hidden" name="title" value="1">
+                <input type="hidden" name="excerpt" value="1">
+                <input type="hidden" name="content" value="1">
+                <input type="hidden" name="categories" value="1">
+                <input type="hidden" name="attributes" value="1">
+                <input type="hidden" name="tags" value="1">
+                <input type="hidden" name="sku" value="1">
+                <input type="hidden" name="orderby" value="date-DESC">
+                <input type="hidden" name="ixwps" value="1">
+                <span title="Clear" class="product-search-field-clear" style="display:none"></span> 
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div id="product-search-results-0" class="product-search-results">
+            <div id="product-search-results-content-0" class="product-search-results-content" style="display: none;"></div>
+        </div>
     </div>
-    <div id="product-filter-results-0" class="product-filter-results"></div>
 </div>
 ```
-Notes:
-> the elements with ID's ( `product-filter-search-form-0` and `product-filter-search-0` ) are likely to be different on you setup. So please inspect the element using your browser inspector to identify the ID. Hence it is very likely for you to have these ID's `product-filter-search-form-1` and `product-filter-search-1` as well.
+It is worth noting that the following id's might differ depending on your install. 
+* ```product-search-0```, ```product-search-form-0```, ```product-search-field-0```, ```product-search-results-0```
+Hence, please if you have something like this instead: ```product-search-1```, ```product-search-form-1```, ```product-search-field-1```, ```product-search-results-1``` OR an ID with any other suffix that is still very okay. It just means you would need to if you have to copy a CSS rule from this tutorial, you would want to make sure sure that the integer suffix matches with yours.
+
+### Examples:
+* [ ] Add a teal border of size 2px to WooCommerce Product Search Field
+* [ ] Changing the search icon within the search field to a red color
+* [ ] Styling Search results Section
+    * [ ] Add a blue border to the search results container
+    * [ ] Make Add to Cart button red with white text
+    * [ ] Make the cancel search icon bigger and red
+    * [ ] this is an incomplete item
+
+##### 1. Add a teal border of size 2px to WooCommerce Product Search Field
+_Preview of final result_
+![Product Search Field teal border](/2pxborder.png)
+
+**HTML Elements** of insterest:
+``` html
+    <div id="product-search-0" class="product-search floating"> OR 
+    <input id="product-search-field-0" name="s" type="text" class="product-search-field" placeholder="Search products …" autocomplete="off">
+```
+*   **ID's** we are insterected in:
+```css
+    #product-search-0 OR
+    #product-search-field-0
+```
+**CSS USED**:
+``` css
+#product-search-0 {
+    border: solid 2px teal;
+}
+
+OR
+
+#product-search-field-0 {
+    border: solid 2px teal;
+}
+
+```
+
+##### 2. Changing the search icon to a red color
+_Preview of final result_
+
+![Product Search field: Red Icon](/redicon.png)
+
+**HTML Elements** of insterest:
+``` html
+    ::before pseudo-element found within the form.
+```
+*   **ID's** we are insterected in:
+```css
+    #product-search-form-0  and  
+    ::before psuedo element. 
+```
+**CSS USED**:
+``` css
+
+#product-search-form-0::before {
+    color: red
+}
+
+```
 
 
-**Based on the HTML above let's customize the search filter**
+##### 3. Add a red border to the search results container
+In this section we consider you intend to style the results displayed after a search has occured. And the search dropdown is visible. An example of the HTML produced after a search result is obtained can be seen below. Alongside a breakdown of each section.
 
-#### Mini design project to master customizing your WPS.
-* [x] Style the Product Filter - Search Widget _See section 1_
-* [x] Change blinker for input field _See section 1.1
-* [x] list syntax required (any unordered or ordered list supported)
-* [x] this is a complete item
-* [ ] this is an incomplete item
+![Product Search results HTML](/search-results.png)
 
-1. #### [SECTION 1] Let's archieve the following design with CSS
-    _Preview of final result_
-    ![Product Search - Filter Example 1](/p_s_f_input.png)
-    *   **HTML Elements** of insterest:
-        ``` html
-            <form id="product-filter-search-form-0" class="product-search-form " action="..." method="...">
-            <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field" placeholder="..." autocomplete="off" value="">
-        ```
-    *   **ID's** we are insterected in:
-        ```css
-            #product-filter-search-form-0
-            #product-filter-field-0
-        ```
+###### 3.1 Add a 2px blue border to the search results container
 
+_Preview of final result_
+![Product Search Results border-blue](/blue-bd.png)
+*   **HTML Elements** of insterest:
+    ``` html
+        <div id="product-search-0" class="product-search floating"> OR 
+        <input id="product-search-field-0" name="s" type="text" class="product-search-field" placeholder="Search products …" autocomplete="off">
+    ```
+*   **ID's** we are insterected in:
+    ```css
+        #product-search-results-content-0
+    ```
+    **CSS USED**:
     ``` css
-    #product-filter-field-0 {
-        border: solid 2px teal;
-        background-color: #fff;
-        color: teal;
-        font-size: 16px;
-        padding: 10px 36px;
-        outline: none;
-    }
-    ```
-    _Adding search ICON to the Product Search - Filter Widget_
-
-    ```` css
-    #product-filter-search-form-0::before {
-        -moz-osx-font-smoothing: grayscale;
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: normal;
-        line-height: 1;
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        vertical-align: baseline;
-        content: "\f002";
-        position: absolute;
-        top: 1.3em;
-        left: 1em;
-        color: teal
-    }
-    ```
-
-2.  ##### [SECTION 1. 1] Change blinker for input field
-    Changing the loading image is as simple as changing the background image of this input field when it has the `.blinker` class
-        
-    _Preview of \final result_
-    [Gif used](https://ya-webdesign.com/image/loading-gif-png/654656.html)
-    ![Product Search - Filter Example 1](/blinker_final.png)
-
-    _Preview of \form before styling result_
-    ![Product Search - Filter Example 1](/blinker_before.png)
-
-    *   **HTML Elements** of insterest:
-        ``` html
-            <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field blinker" placeholder="..." autocomplete="off" value="">
-        ```
-    *   **ID(s) and class(es)** we are insterected in:
-        ```css
-            #product-filter-search-form-0 or .product-search-form
-            .blinker
-        ```
-
-        _Adding search ICON to the Product Search - Filter Widget_
-        ``` css
-        .product-search-form input.blinker {
-            background-image: url('/wp-content/uploads/2020/07/loading-gif-png.gif');
-            background-position: right 8px center;
-            background-repeat: no-repeat;
-            background-size: 10%;
+        #product-search-results-content-0 {
+            border: solid 2px blue;
         }
-        ```
-        
-        
+
+    ```
+###### 3.2 Make Add to Cart button red with white text
+
+_Preview of final result_
+![Product Search - Filter Example 1](/red-btn.png)
+*   **HTML Elements** of insterest:
+    ``` html
+        <div id="product-search-0" class="product-search floating"> 
+        <a href="..." data-quantity="..." class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="..." >Add to cart</a>
+    ```
+*   **ID and classes ** we are insterected in:
+    ```css
+        #product-search-0 , for ID 
+        .wps_add_to_cart and  .add_to_cart_button for classes
+    ```
+    **CSS USED**:
+    ``` css
+        #product-search-0 .wps_add_to_cart .add_to_cart_button {
+            background-color: red;
+            color: white;
+        }
+
+    ```
+
+###### 3.3 MMake the cancel search icon bigger and red
+
+_Preview of final result_
+![Product Search - Filter Example 1](/red-cancel.png)
+*   **HTML Elements** of insterest:
+    ``` html
+        <div id="product-search-0" class="product-search floating"> 
+        <span title="Clear" class="product-search-field-clear" style=""></span>
+    ```
+*   **ID and classes ** we are insterected in:
+    ```css
+        #product-search-0 , for ID 
+        .product-search-field-clear for class
+    ```
+    **CSS USED**:
+    ``` css
+        #product-search-0 .product-search-field-clear {
+            font-size: 30px;
+            color: red;
+        }
+
+    ```
+
+
