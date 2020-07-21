@@ -195,4 +195,5 @@ _Preview of final result_
 
     ```
 
-
+#### How to apply your CSS using the inline stylesheet prodivided by WooCommerce Product Search.
+![Product Search - Filter Example 1](/styles.gif)
