@@ -156,7 +156,8 @@ _Preview of final result_
         }
 
     ```
-###### 3.2 Style ADD TO CART button.
+
+### 3.2 Style ADD TO CART button.
 In this example we explore styling the add to cart button by giving it **red background color** and a **white text**.
 
 _Preview of final result_
@@ -168,7 +169,7 @@ _Preview of final result_
         <div id="product-search-0" class="product-search floating"> 
         <a href="..." data-quantity="..." class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="..." >Add to cart</a>
     ```
-*   **ID and classes ** we are interested in:
+*   **ID and classes** we are interested in:
     ```css
         #product-search-0 , for ID 
         .wps_add_to_cart and  .add_to_cart_button for classes
@@ -211,7 +212,10 @@ _Preview of final result_
 ### How to apply CSS with WPS inline stylesheet.
 The Animated GIF below demonstrates how you would apply your custom styles to your website. In the example below we demonstrate how you would go about applying a 2px red border and a red icon search icon to your search field. 
 
-Inorder to access the inline stylesheet, from your admin dashboard you would navigate to: **WooCommerce -> Settings -> Search -> CSS**. Then make sure the **Use inline styles** option is enabled. 
+Inorder to access the inline stylesheet, from your admin dashboard you would;
+* Navigate to: **WooCommerce -> Settings -> Search -> CSS**. 
+* Make sure the **Use inline styles** option is enabled. 
+* Paste your CSS rules in the **Inline styles** stylesheet provided.
 
 ![Product Search - Filter Example 1](/styles.gif)
 
