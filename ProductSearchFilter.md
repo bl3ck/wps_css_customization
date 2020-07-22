@@ -1,8 +1,18 @@
 
+## Product Filter-Search 
 
-### Product Filter - Search 
+This section of the tutorial focuses more on styling the [WooCommerce Product Filter-Search](https://docs.woocommerce.com/document/woocommerce-product-search/widgets/product-filter-search/). 
 
-Once the widget Product Filter - Search is place on a side bar, you would have the following default html in place.
+We will be exploring how to change the look and feel of the Product Filter-Search.
+
+> 
+> Though we assume you know your way around with CSS rules. Here's a good resource to help refresh your mind on CSS rules and how to target HTML elements with CSS.
+> * [CSS rules reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+> * [How to target HTML with CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+
+> 
+
+Once the widget **Product Filter-Search widget** is place on a side bar, you would have the following default HTML in place.
 
 ``` html
 <div id="product-filter-search-1" class="product-search product-filter product-search-filter-search" style="">
@@ -23,25 +33,27 @@ Once the widget Product Filter - Search is place on a side bar, you would have t
 </div>
 ```
 Notes:
-> the elements with ID's ( `product-filter-search-form-0` and `product-filter-search-0` ) are likely to be different on you setup. So please inspect the element using your browser inspector to identify the ID. Hence it is very likely for you to have these ID's `product-filter-search-form-1` and `product-filter-search-1` as well.
-
+> These IDs ( `product-filter-search-form-0` and `product-filter-search-0` ) are likely to be different on you setup. Hence, please inspect the element using your browser inspector to identify the ID. Tt is also very likely for you to have these IDs `product-filter-search-form-1` and `product-filter-search-1`.
 
 **Based on the HTML above let's customize the search filter**
 
-#### Mini design project to master customizing your WPS.
-* [ ] Style the Product Filter - Search Widget
-* [ ] Change blinker for input field _See section 1.1
-* [ ] list syntax required (any unordered or ordered list supported)
+## Customizing Product Search-Filter.
+We have prepared a mini design customization project aimed at helping  you master the style customizations for Product Search - Filter.
+* [ ] Style the Product Filter-Search Widget
+* [ ] Change blinker for the Product Search - Filter input field
 
-##### 1 Let's archieve the following design with CSS
+### 1 Project One: 
+In this mini-project we would be adding a teal search icon and teal border to the Product Search - Filter input field.
 _Preview of final result_
+
 ![Product Search - Filter Example 1](/p_s_f_input.png)
-*   **HTML Elements** of insterest:
+
+*   **HTML Elements** of interest:
     ``` html
         <form id="product-filter-search-form-0" class="product-search-form " action="..." method="...">
         <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field" placeholder="..." autocomplete="off" value="">
     ```
-*   **ID's** we are insterected in:
+*   **ID's** we are interested in:
     ```css
         #product-filter-search-form-0
         #product-filter-field-0
@@ -58,7 +70,7 @@ _Preview of final result_
     ```
     _Adding search ICON to the Product Search - Filter Widget_
 
-    ```` css
+    ``` css
     #product-filter-search-form-0::before {
         display: inline-block;
         font-style: normal;
@@ -76,34 +88,45 @@ _Preview of final result_
     }
     ```
 
-2.  ##### [SECTION 1. 1] Change blinker for input field
-    Changing the loading image is as simple as changing the background image of this input field when it has the `.blinker` class
-        
-    _Preview of \final result_
-    [Gif used](https://ya-webdesign.com/image/loading-gif-png/654656.html)
-    ![Product Search - Filter Example 1](/blinker_final.png)
+### Project Two: 
+Mini project two focuses on changing the rectangular blinker for the Product Search-Filter input field to a radial loading gif. 
 
-    _Preview of \form before styling result_
-    ![Product Search - Filter Example 1](/blinker_before.png)
+> We achieve this by changing the background image of this Product Search-Filter input field when it has the `.blinker` class
+    
+_Preview of \final result_
+[Gif used](https://ya-webdesign.com/image/loading-gif-png/654656.html)
+![Product Search - Filter Example 1](/blinker_final.png)
 
-    *   **HTML Elements** of insterest:
-        ``` html
-            <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field blinker" placeholder="..." autocomplete="off" value="">
-        ```
-    *   **ID(s) and class(es)** we are insterected in:
-        ```css
-            #product-filter-search-form-0 or .product-search-form
-            .blinker
-        ```
+_Preview of \form before styling result_
+![Product Search - Filter Example 1](/blinker_before.png)
 
-        _Adding search ICON to the Product Search - Filter Widget_
-        ``` css
-        .product-search-form input.blinker {
-            background-image: url('/wp-content/uploads/2020/07/loading-gif-png.gif');
-            background-position: right 8px center;
-            background-repeat: no-repeat;
-            background-size: 10%;
-        }
-        ```
+*   **HTML Elements** of interest:
+    ``` html
+        <input id="product-filter-field-0" name="ixwpss" type="text" class="product-filter-field blinker" placeholder="..." autocomplete="off" value="">
+    ```
+*   **ID(s) and class(es)** we are interested in:
+    ```css
+        #product-filter-search-form-0 or .product-search-form
+        .blinker
+    ```
+
+    _Adding search ICON to the Product Search - Filter Widget_
+    ``` css
+    .product-search-form input.blinker {
+        background-image: url('/wp-content/uploads/2020/07/loading-gif-png.gif');
+        background-position: right 8px center;
+        background-repeat: no-repeat;
+        background-size: 10%;
+    }
+    ```
         
-        
+
+### How to apply CSS with WPS inline stylesheet.
+The Animated GIF below demonstrates how you would apply your custom styles to your website.
+
+Inorder to access the inline stylesheet, from your admin dashboard you would;
+* Navigate to: **WooCommerce -> Settings -> Search -> CSS**. 
+* Make sure the **Use inline styles** option is enabled. 
+* Paste your CSS rules in the **Inline styles** stylesheet provided.
+
+

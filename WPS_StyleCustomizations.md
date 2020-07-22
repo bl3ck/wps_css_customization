@@ -9,28 +9,32 @@ This tutorial is based of the [STORE FRONT WooCommerce theme](https://woocommerc
 I would also be using Firefox as over the course of this tutorial. However, it is worth nothing that the instructions here would also apply on your stores with different themes and browsers. We would also be using the [Inline Styles CSS editor](https://docs.woocommerce.com/document/woocommerce-product-search/settings/css/) provided by WooCommerce Product Search inorder to apply our custom styles.
 
 
-#### How to inspect and locate ID's and Classes. 
+### How to inspect and locate ID's and Classes. 
 This is very important as most of the tutorial relies heavily on this. We would be using the **developer console** for this. 
 
-In order to access the developer console, 
+In order to access the developer console;
 * **Right click** on the webpage and select **Inspect Element** OR press the ```Ctrl``` ```Shift``` ```K``` (```Command``` ```Option``` ```K``` on OS X) keyboard shortcut. [for Mozilla Firefox]
 * **Right click** on the webpage and select **Inspect** OR press the ```Ctrl``` ```Shift``` ```C``` (```Command``` ```Option``` ```C``` on OS X) keyboard shortcut. [for Google Chrome]
 
-Let's move on to identifying the ID and classes for WooCommerce Product Search field.
+Let's move on to identifying the IDs and classes that are made available by the WooCommerce Product Search. These IDs and classes would be used to help target the HTML elements you intend to style.
+
 **See Screenshots:**
 1. Before
    ![How to Inspect a Product Search Field](/find_id.png)
+
 2. After Inspecting
    ![How to Inspect a Product Search Field](/console.png)
->   _
+
+> 
 > Though we assume you know your way around with CSS rules. Here's a good resource to help refresh your mind on CSS rules and how to target HTML elements with CSS.
 > * [CSS rules reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 > * [How to target HTML with CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
->   _
+
+> 
 
 
 ### How to modify some properties of WooCommerce Product Search Field.
-After inpecting the WooCommerce Product Search Field, you should be able to see the following HTML in your console.
+After inspecting the WooCommerce Product Search Field, you should be able to see the following HTML in your console.
 
 ``` html
 <div class="widget woocommerce widget_product_search">
@@ -59,29 +63,29 @@ After inpecting the WooCommerce Product Search Field, you should be able to see 
     </div>
 </div>
 ```
-It is worth noting that the following id's might differ depending on your install. 
+It is worth noting that the following ID's might differ depending on your install. 
 * ```product-search-0```, ```product-search-form-0```, ```product-search-field-0```, ```product-search-results-0```
 Hence, please if you have something like this instead: ```product-search-1```, ```product-search-form-1```, ```product-search-field-1```, ```product-search-results-1``` OR an ID with any other suffix that is still very okay. It just means you would need to if you have to copy a CSS rule from this tutorial, you would want to make sure sure that the integer suffix matches with yours.
 
-### Examples:
+### Examples Covered:
 * [ ] Add a teal border of size 2px to WooCommerce Product Search Field
 * [ ] Changing the search icon within the search field to a red color
 * [ ] Styling Search results Section
     * [ ] Add a blue border to the search results container
     * [ ] Make Add to Cart button red with white text
     * [ ] Make the cancel search icon bigger and red
-    * [ ] this is an incomplete item
 
-##### 1. Add a teal border of size 2px to WooCommerce Product Search Field
+### 1. Add Border to WPS Search Field
+This example focuses on adding a border to the WooCommerce Product Search Field. For example let's **add a teal border of size 2px to WooCommerce Product Search Field**.
 _Preview of final result_
 ![Product Search Field teal border](/2pxborder.png)
 
-**HTML Elements** of insterest:
+**HTML Elements** of interest:
 ``` html
     <div id="product-search-0" class="product-search floating"> OR 
     <input id="product-search-field-0" name="s" type="text" class="product-search-field" placeholder="Search products …" autocomplete="off">
 ```
-*   **ID's** we are insterected in:
+*   **ID's** we are interested in:
 ```css
     #product-search-0 OR
     #product-search-field-0
@@ -100,16 +104,17 @@ OR
 
 ```
 
-##### 2. Changing the search icon to a red color
+### 2. Change WPS Search icon color.
+This example focuses on modifying the WPS icon color. For instance if you wanted to change the search icon to a red color, here's what you'll do.
 _Preview of final result_
 
 ![Product Search field: Red Icon](/redicon.png)
 
-**HTML Elements** of insterest:
+**HTML Elements** of interest:
 ``` html
     ::before pseudo-element found within the form.
 ```
-*   **ID's** we are insterected in:
+*   **ID's** we are interested in:
 ```css
     #product-search-form-0  and  
     ::before psuedo element. 
@@ -124,21 +129,23 @@ _Preview of final result_
 ```
 
 
-##### 3. Add a red border to the search results container
-In this section we consider you intend to style the results displayed after a search has occured. And the search dropdown is visible. An example of the HTML produced after a search result is obtained can be seen below. Alongside a breakdown of each section.
+### 3. Styling WPS Search results
+In this section we consider you intend to style the results displayed after a search has occurred. And the search dropdown is visible. An example of the HTML produced after a search result is obtained can be seen below alongside a breakdown of each section.
 
 ![Product Search results HTML](/search-results.png)
 
-###### 3.1 Add a 2px blue border to the search results container
-
+### 3.1 Add border to the search results container
+In this example we will be adding a 2px blue border to the search results container.
 _Preview of final result_
+
 ![Product Search Results border-blue](/blue-bd.png)
-*   **HTML Elements** of insterest:
+
+*   **HTML Elements** of interest:
     ``` html
         <div id="product-search-0" class="product-search floating"> OR 
         <input id="product-search-field-0" name="s" type="text" class="product-search-field" placeholder="Search products …" autocomplete="off">
     ```
-*   **ID's** we are insterected in:
+*   **ID's** we are interested in:
     ```css
         #product-search-results-content-0
     ```
@@ -149,16 +156,19 @@ _Preview of final result_
         }
 
     ```
-###### 3.2 Make Add to Cart button red with white text
+###### 3.2 Style ADD TO CART button.
+In this example we explore styling the add to cart button by giving it **red background color** and a **white text**.
 
 _Preview of final result_
+
 ![Product Search - Filter Example 1](/red-btn.png)
-*   **HTML Elements** of insterest:
+
+*   **HTML Elements** of interest:
     ``` html
         <div id="product-search-0" class="product-search floating"> 
         <a href="..." data-quantity="..." class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="..." >Add to cart</a>
     ```
-*   **ID and classes ** we are insterected in:
+*   **ID and classes ** we are interested in:
     ```css
         #product-search-0 , for ID 
         .wps_add_to_cart and  .add_to_cart_button for classes
@@ -172,16 +182,19 @@ _Preview of final result_
 
     ```
 
-###### 3.3 MMake the cancel search icon bigger and red
+### 3.3 Style Cancel Search icon
+In this example we explore one of the most sought-after customizations; **"how do I make the cancel search icon bigger and red?"**.
 
 _Preview of final result_
+
 ![Product Search - Filter Example 1](/red-cancel.png)
-*   **HTML Elements** of insterest:
+
+*   **HTML Elements** of interest:
     ``` html
         <div id="product-search-0" class="product-search floating"> 
         <span title="Clear" class="product-search-field-clear" style=""></span>
     ```
-*   **ID and classes ** we are insterected in:
+*   **ID and classes ** we are interested in:
     ```css
         #product-search-0 , for ID 
         .product-search-field-clear for class
@@ -195,5 +208,10 @@ _Preview of final result_
 
     ```
 
-#### How to apply your CSS using the inline stylesheet prodivided by WooCommerce Product Search.
+### How to apply CSS with WPS inline stylesheet.
+The Animated GIF below demonstrates how you would apply your custom styles to your website. In the example below we demonstrate how you would go about applying a 2px red border and a red icon search icon to your search field. 
+
+Inorder to access the inline stylesheet, from your admin dashboard you would navigate to: **WooCommerce -> Settings -> Search -> CSS**. Then make sure the **Use inline styles** option is enabled. 
+
 ![Product Search - Filter Example 1](/styles.gif)
+
