@@ -8,6 +8,9 @@ This tutorial is based of the [Storefront WooCommerce theme](https://woocommerce
 
 The browser used in the tutorials is Mozilla Firefox. However, it is worth nothing that the instructions here would also apply on your stores with different themes and browsers. We would also be using the [Inline Styles CSS editor](https://docs.woocommerce.com/document/woocommerce-product-search/settings/css/) inorder to apply our custom styles.
 
+### Documentation sections
+* [WooCommerce Product Search Field](/WPS_StyleCustomizations.md)
+* [WooCommerce Product Search - Filter ](/ProductSearchFilter.md)
 
 ### How to inspect and locate IDs and classes
 This is very important as most of the tutorial relies heavily on this. We would be using the **developer console** for this. 
@@ -68,8 +71,8 @@ Hence, please if you have something like this instead: ```product-search-1```, `
 ### Examples covered
 * [ ] Add a teal border of size 2px to WooCommerce Product Search Field
 * [ ] Changing the search icon within the search field to a red color
-* [ ] Styling Search results Section
-    * [ ] Add a blue border to the search results container
+* [ ] Styling WPS Search result section
+    * [ ] Add a blue border to the search result container
     * [ ] Make Add to Cart button red with white text
     * [ ] Make the cancel search icon bigger and red
 
@@ -134,7 +137,7 @@ In this section we consider you intend to style the results displayed after a se
 
 ![Product Search results HTML](/search-results.png)
 
-### 3.1 Add border to the search results container
+### 3.1 Add border to the search result container
 In this example we will be adding a 2px blue border to the search results container.
 
 _Preview of final result_

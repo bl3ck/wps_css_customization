@@ -128,5 +128,3 @@ Inorder to access the inline stylesheet, from your admin dashboard you would;
 * Navigate to: **WooCommerce -> Settings -> Search -> CSS**
 * Make sure the **Use inline styles** option is enabled
 * Paste your CSS rules in the **Inline styles** stylesheet provided
-
-
