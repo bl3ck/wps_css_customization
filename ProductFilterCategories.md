@@ -36,8 +36,8 @@ Here's a list of the top three customization request we have received so far wit
 * [ ] Make category items look like buttons
 
 
-### Hide child categories for a given parent category.
-This is one of our most popular inquiries.
+### Display only child categories
+This is one of our most popular inquiries. If you would love to hide the parent categories and have only the child categories displayed. Please add the CSS snippet below.
 
 _Before_
 
