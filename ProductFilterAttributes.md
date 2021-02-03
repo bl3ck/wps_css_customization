@@ -5,7 +5,7 @@ This section of the tutorial focuses more on styling the [Product Filter - Attri
 
 We will be exploring how to change the look and feel of the Product Filter - Attributes.
 > 
-> Though we assume you know your way around with CSS rules. Here's a good resource to help refresh your mind on CSS rules and how to target HTML elements with CSS.
+> Though we assume you know your way around with CSS rules, here are some good resources to help refresh your mind on CSS rules and how to target HTML elements with CSS.
 > * [CSS rules reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 > * [How to target HTML with CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
 
@@ -66,7 +66,9 @@ With the above CSS rules applied and two colors selected(yellow and navy blue), 
 ### How to apply CSS with WPS inline stylesheet.
 The Animated GIF below demonstrates how you would apply your custom styles to your website.
 
-Inorder to access the inline stylesheet, from your admin dashboard you would;
+![Product Filter - categories Example 1](/styles.gif)
+
+In order to access the inline stylesheet, from your admin dashboard you would;
 * Navigate to: **WooCommerce -> Settings -> Search -> CSS**
 * Make sure the **Use inline styles** option is enabled
 * Paste your CSS rules in the **Inline styles** stylesheet provided
