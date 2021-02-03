@@ -6,7 +6,7 @@ This section of the tutorial focuses more on styling the [Product Filter - Categ
 We will be exploring how to change the look and feel of the Product Filter - Categories.
 
 > 
-> Though we assume you know your way around with CSS rules. Here's a good resource to help refresh your mind on CSS rules and how to target HTML elements with CSS.
+> Though we assume you know your way around with CSS rules, here are some good resources to help refresh your mind on CSS rules and how to target HTML elements with CSS.
 > * [CSS rules reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 > * [How to target HTML with CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
 
@@ -42,7 +42,7 @@ Here's a list of the top customization requests received for Product Filter - Ca
 #### Display only child categories
 This is one of our most popular inquiries. If you would love to hide the parent categories and have only the child categories displayed. Please add the CSS snippet below.
 
-_This customization requires you to set the **Expand Child Terms** option to **Expand Child Terms**  in the navigation section of the Product Filter - Categories widgets settings_
+> _This customization requires you to set the **Expand Child Terms** option to **Expand Child Terms**  in the navigation section of the Product Filter - Categories widgets settings_
 
 This is the appearance of Product Filter - Categories with parent categories visible before we apply our customizations:
 
@@ -70,7 +70,7 @@ With the above CSS rules applied, here's how the Product Filter - Categories now
 ![Product Filter - categories Example 2](/hcat-after.jpg)
 
 #### Change font color of parent categories
-In this example, we will be changing the color of the parent categories to blue( #16c0f4 ). 
+In this example, we will be changing the color of the parent categories to a shade of blue( #16c0f4 ). 
 
 This is the appearance of Product Filter - Categories with parent categories visible before we apply our customizations:
 
@@ -95,7 +95,7 @@ With the above CSS rules applied, here's the result within the context of our de
 ![Product Filter - categories Example 1](/cpcat-after.jpg)
 
 #### Styling active(selected) term(category):
-In this section we will focus on styling a category(term) which is selected, by setting the selected category's color to blue(#16c0f4).
+In this section we will focus on styling a category(term) which is selected, by setting the selected category's color to a shade of blue(#16c0f4).
 
 For instance, we will consider the user has selected the **Women** category from the Product Filter - Categories widget. 
 
@@ -223,7 +223,7 @@ With the above CSS rules applied, here's the result within the context of our de
 ### How to apply CSS with WPS inline stylesheet.
 The Animated GIF below demonstrates how you would apply your custom styles to your website.
 
-Inorder to access the inline stylesheet, from your admin dashboard you would;
+In order to access the inline stylesheet, from your admin dashboard you would;
 * Navigate to: **WooCommerce -> Settings -> Search -> CSS**
 * Make sure the **Use inline styles** option is enabled
 * Paste your CSS rules in the **Inline styles** stylesheet provided
