@@ -105,7 +105,7 @@ Appearance before we apply our customizations:
 
 **ID** and **classes** we are interested in:
 ```css
-    #product-search-filter-category-0, .product-search-product_cat-filter-item.current-cat 
+    #product-search-filter-category-0, .product-search-product_cat-filter-item, .current-cat 
 ```
 
 ``` css
@@ -151,9 +151,9 @@ In this example we'll focus on changing the background color of selected items(c
 Appearance before we apply our customizations:
 ![Product Filter - categories Example 2](/dcatselect-before.jpg)
 
-**ID** we are interested in:
+**ID** and **classes** we are interested in:
 ```css
-    #product-search-filter-category-0
+    #product-search-filter-category-0, .has-options, .item
 ```
 
 ``` css
@@ -197,7 +197,7 @@ In this section we demonstrate how you would go about adding a font color of red
 Appearance before we apply our customizations:
 ![Product Filter - categories Example 2](/dclear-before.jpg)
 
-**ID** and **classes** we are interested inwe are interested in: (In order to style the cancel icon by the Clear label we would also be interested in the psuedo-element ```::before```)
+**ID** and **classes** we are interested in: (In order to style the cancel icon by the Clear label we would also be interested in the psuedo-element ```::before```)
 ```css
     #product-search-filter-category-0, .nav-back 
 ```
