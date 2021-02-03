@@ -1,5 +1,5 @@
 
-## Product Filter - Categories
+## Product Filter - Attributes
 
 This section of the tutorial focuses more on styling the [Product Filter - Attributes](https://docs.woocommerce.com/document/woocommerce-product-search/widgets/product-filter-attributes/). 
 
