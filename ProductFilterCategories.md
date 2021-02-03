@@ -30,143 +30,93 @@ Once the widget or shortcode of **Product Filter - Categories** is placed on you
 </div>
 ```
 Notes:
-> The ID ( `product-search-filter-category-0`) is likely to be different on you setup. Hence, please inspect the element using your browser inspector to identify the ID. Tt is also very likely for you to have an ID like `product-search-filter-category-1`.
+> The ID ( `product-search-filter-category-0`) is likely to be different on your setup. Hence, please inspect the element using your browser inspector to identify the ID.
 
 
-Here's a list of the top three customization request we have received so far with respect to customizations for Product Filter - Categories
-* [ ] Display only child categories
-* [ ] Change font color of child categories
-* [ ] Make category items look like buttons
+Here's a list of the top customization requests received for Product Filter - Categories:
+* Display only child categories
+* Change font color of parent categories
+* Styling active(selected) term(category)
 
 
 #### Display only child categories
 This is one of our most popular inquiries. If you would love to hide the parent categories and have only the child categories displayed. Please add the CSS snippet below.
 
-_Preview of results_
+_This customization requires you to set the **Expand Child Terms** option to **Expand Child Terms**  in the navigation section of the Product Filter - Categories widgets settings_
 
-![Product Filter - categories Example 1](/pfc-inline-1.jpg)
+This is the appearance of Product Filter - Categories with parent categories visible before we apply our customizations:
 
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-category-0
-    ```
+![Product Filter - categories Example 1](/hcat-before.jpg)
 
-    ``` css
-    #product-search-filter-category-0 .cat-parent{
-	    visibility: hidden;
-    }
-    #product-search-filter-category-0 .cat-parent .children {
-        visibility: initial;
-        margin: 0;
-    }
-    ```
-
-#### Change font color of child categories
-In this example we'll be changing the color of child categories to red. 
-
-_Preview of results_
-
-![Product Filter - categories Example 2](/pfc-color.jpg)
-
-
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-category-0
-    ```
-
-    ``` css
-    #product-search-filter-category-0 .cat-parent .children a {
-	    color: red;
-    }
-    ```
-
-
-#### Make category items look like buttons
-In this example we'll change the list item feel to that of a basic button. The extent to which this can be customized is totally depends on your needs. As you can go further by adding **border-radius**, **color**, **font-size**, **background-color** ... 
-
-_Preview of results_
-
-![Product Filter - categories Example 2](/pfc-btns.jpg)
-
-
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-category-0
-    ```
-
-    ``` css
-    #product-search-filter-category-0 li a {
-        border: solid 1px #000;
-        padding: 5px 15px;
-    }
-    #product-search-filter-category-0 li {
-        line-height: 2.5;
-    }
-    ```
-
-
-### Customizing Product Filter - Categories with style option set to Select
-> 
-
-Once the widget or shortcode of **Product Filter - Categories** is placed on your site and the style option set to **Select**, you should have the following HTML structure:
-
-``` html
-<div id="product-search-filter-category-0" class="product-search-filter-terms ">
-    <div class="product-search-filter-terms-heading product-search-filter-category-heading" id="product-search-filter-category-heading-0">Category</div>
-    <select name="product-search-filter-product_cat">
-        <option value=""> </option>
-        <option value=""> </option>
-        <option value=""> </option>
-        ...
-    </select>
-</div>
+**ID** and **classes** we are interested in:
+```css
+#product-search-filter-category-0, .cat-parent, .children
 ```
-Notes:
-> The ID ( `product-search-filter-category-0`) is likely to be different on you setup. Hence, please inspect the element using your browser inspector to identify the ID. Tt is also very likely for you to have an ID like `product-search-filter-category-1`.
-
-Examples covered:
-* [ ] Add spacing between categories
-* [ ] Increase height of select box
+These are the CSS rules we apply:
 
 
-#### Add spacing between categories
-In this example we'll focus on increasing the spacing between category items. This example makes uses a padding of 20px around each category item, however these values can be changed to meet your needs.
+``` css
+#product-search-filter-category-0 .cat-parent{
+    visibility: hidden;
+    margin-top: -30px;
+}
+#product-search-filter-category-0 .cat-parent .children {
+    visibility: initial;
+    margin: 0;
+}
+```
+With the above CSS rules applied, here's how the Product Filter - Categories now looks within the context of our demo store with the parent categories removed...
 
-_Preview of results_
+![Product Filter - categories Example 2](/hcat-after.jpg)
 
-![Product Filter - categories Example 2](/pfc-select-1.jpg)
+#### Change font color of parent categories
+In this example, we will be changing the color of the parent categories to blue( #16c0f4 ). 
 
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-category-0
-    ```
+This is the appearance of Product Filter - Categories with parent categories visible before we apply our customizations:
 
-    ``` css
-    #product-search-filter-category-0 option {
-        padding: 12px;
-    }
-    ```
+![Product Filter - categories Example 1](/cpcat-before.jpg)
 
-#### Increase the height of the select box
-In this example we'll increase the height of the select box to 200px.
+**ID** and **classes** we are interested in:
+```css
+    #product-search-filter-category-0, .cat-parent, .children 
+```
 
-_Preview of results_
+``` css
+#product-search-filter-category-0 .cat-parent a {
+    color: #16c0f4;
+}
+#product-search-filter-category-0 .cat-parent .children a {
+    color: #000;
+}
+```
 
-![Product Filter - categories Example 2](/pfc-h.jpg)
+With the above CSS rules applied, here's the result within the context of our demo store...
 
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-select-product_cat-0
-    ```
+![Product Filter - categories Example 1](/cpcat-after.jpg)
 
-    ``` css
-    #product-search-filter-select-product_cat-0 {
-        height: 200px;
-    }
-    ```
+#### Styling active(selected) term(category):
+In this section we will focus on styling a category(term) which is selected, by setting the selected category's color to blue(#16c0f4).
 
+For instance, we will consider the user has selected the **Women** category from the Product Filter - Categories widget. 
 
+Appearance before we apply our customizations:
 
+![Product Filter - categories Example 1](/scat-before.jpg)
+
+**ID** and **classes** we are interested in:
+```css
+    #product-search-filter-category-0, .product-search-product_cat-filter-item.current-cat 
+```
+
+``` css
+.product-search-product_cat-filter-item.current-cat > a {
+    color: #16c0f4;
+}
+```
+
+With the above CSS rules applied, here's the result within the context of our demo store...
+
+![Product Filter - categories Example 1](/scat-after.jpg)
 
 ### Customizing Product Filter - Categories with style option set to Dropdown
 > 
@@ -188,50 +138,85 @@ Once the widget or shortcode of **Product Filter - Categories** is placed on you
 </div>
 ```
 Notes:
-> The ID ( `product-search-filter-category-0`) is likely to be different on you setup. Hence, please inspect the element using your browser inspector to identify the ID. Tt is also very likely for you to have an ID like `product-search-filter-category-1`.
+> The ID ( `product-search-filter-category-0`) is likely to be different on your setup. Hence, please inspect the element using your browser inspector to identify the ID.
 
 Examples covered:
-* [ ] Change the background color of selected items
-* [ ] Add hover background color to dropdown options
+* Change the background color of selected items
+* Add hover background color to dropdown options
 
 
-#### Change the background color of selected items
+#### Change the background color of selected items 
 In this example we'll focus on changing the background color of selected items(categories) to teal and its color to white.
 
-_Preview of results_
+Appearance before we apply our customizations:
+![Product Filter - categories Example 2](/dcatselect-before.jpg)
 
-![Product Filter - categories Example 2](/pfc-os.jpg)
+**ID** we are interested in:
+```css
+    #product-search-filter-category-0
+```
 
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-category-0
-    ```
+``` css
+#product-search-filter-category-0 .has-options .item {
+    background-color: #16c0f4;
+    color: white;
+    padding: 4px 5px;
+    line-height: initial;
+}
+```
+With the above CSS rules applied, here's the result within the context of our demo store...
 
-    ``` css
-    #product-search-filter-category-0 .has-options .item {
-        background-color: #0b7b86;
-        color: white;
-    }
-    ```
+![Product Filter - categories Example 1](/dcatselect-after.jpg)
+
 
 #### Add hover background color to dropdown options
 This example demonstrates how you could go about adding a hover background color to the dropdown options.
 
-_Preview of results_
+Appearance before we apply our customizations:
+![Product Filter - categories Example 2](/dcathover-before.jpg)
 
-![Product Filter - categories Example 2](/pfc-hover.jpg)
+**ID** we are interested in:
+```css
+    #product-search-filter-category-0
+```
 
-*   **ID** we are interested in:
-    ```css
-        #product-search-filter-category-0
-    ```
+``` css
+#product-search-filter-category-0  .selectize-dropdown .option:hover {
+    background-color: #16c0f4;
+    color: #fff;
+}
+```
+With the above CSS rules applied, here's the result within the context of our demo store...
 
-    ``` css
-    #product-search-filter-category-0  .selectize-dropdown .option:hover {
-        background-color: #0b7b86;
-        color: #fff;
-    }
-    ```
+![Product Filter - categories Example 1](/dcathover-after.jpg)
+
+
+#### Change style of "clear" icon and text when a catgory is selected
+In this section we demonstrate how you would go about adding a font color of red to the **Clear** action that is displayed after a user has selected a category
+
+Appearance before we apply our customizations:
+![Product Filter - categories Example 2](/dclear-before.jpg)
+
+**ID** and **classes** we are interested inwe are interested in: (In order to style the cancel icon by the Clear label we would also be interested in the psuedo-element ```::before```)
+```css
+    #product-search-filter-category-0, .nav-back 
+```
+
+``` css
+/* Styling the icon */
+.product-search-filter-terms .nav-back::before{
+    color: red;
+    padding: 0;
+    font-size: 20px;
+}
+/* Styling the label - Clear */
+.product-search-filter-terms .nav-back a{
+    color: red;
+}
+```
+With the above CSS rules applied, here's the result within the context of our demo store...
+
+![Product Filter - categories Example 1](/dclear-after.jpg)
 
 
 
