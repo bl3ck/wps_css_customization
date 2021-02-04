@@ -221,9 +221,6 @@ With the above CSS rules applied, here's the result within the context of our de
 
 
 ### How to apply CSS with WPS inline stylesheet.
-The Animated GIF below demonstrates how you would apply your custom styles to your website.
-
-![Product Filter - categories Example 1](/styles.gif)
 In order to access the inline stylesheet, from your admin dashboard you would;
 * Navigate to: **WooCommerce -> Settings -> Search -> CSS**
 * Make sure the **Use inline styles** option is enabled

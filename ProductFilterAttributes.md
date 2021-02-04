@@ -64,9 +64,6 @@ With the above CSS rules applied and two colors selected(yellow and navy blue), 
 ![Product Filter - categories Example 2](/afcolor-after.jpg)
 
 ### How to apply CSS with WPS inline stylesheet.
-The Animated GIF below demonstrates how you would apply your custom styles to your website.
-
-![Product Filter - categories Example 1](/styles.gif)
 
 In order to access the inline stylesheet, from your admin dashboard you would;
 * Navigate to: **WooCommerce -> Settings -> Search -> CSS**
